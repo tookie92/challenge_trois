@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nike_idee/screens/screens.dart';
 import 'package:nike_idee/widgets/widgets.dart';
 
 class GridScreen extends StatefulWidget {
@@ -34,6 +35,7 @@ class _GridScreenState extends State<GridScreen> {
             color: Colors.black
         ),
         child: ListView(
+          physics: NeverScrollableScrollPhysics(),
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -41,6 +43,7 @@ class _GridScreenState extends State<GridScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
+                  SizedBox(height: 30.0,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -108,16 +111,16 @@ class _GridScreenState extends State<GridScreen> {
                     ],
                   ),
 
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.10,),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.12,),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
                     child: ButtonOhneIcons(
-                      onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (_)=> GridScreen())),
-                      label: 'Get Started',
+                      onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (_)=> NotificationScreen() )),
+                      label: 'next',
                       schriftColor: Colors.black,
                       color: Colors.white,
                       height: 60.0,
-                      width: 300.0,
+                      width: 500.0,
                     ),
                   )
                 ],

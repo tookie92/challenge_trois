@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class CircleIcon extends StatelessWidget {
   final IconData icon;
   final bool add;
+  final bool add_other;
 
   const CircleIcon({Key key,
     this.icon,
-    this.add = false
+    this.add = false,
+    this.add_other = false
   }) : super(key: key);
 
 
@@ -41,6 +43,20 @@ class CircleIcon extends StatelessWidget {
             child: Icon(Icons.add, color: Colors.black,),
           ),
         ): SizedBox.shrink(),
+
+        add_other? Positioned(
+            right: 187.0,
+            top: 59.0,
+            child: Container(
+              height: 10.0,
+              width: 10.0,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.red,
+              ),
+            ),
+
+          ): SizedBox.shrink(),
       ],
     );
   }

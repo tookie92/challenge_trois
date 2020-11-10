@@ -92,19 +92,32 @@ class _SignUpState extends State<SignUp> {
                       label: 'Login',
                     ),
                     SizedBox(height: 20.0,),
-                    ButtonMitIcons(
-                      onTap: (){
-                        print('facebook login');
-                      },
-                        icon: Icon(
-                          MdiIcons.facebook,
-                          color: Colors.white,
-                        ),
-                        label: 'Log in with Facebook',
-                      height: 60.0,
-                      width: 400.0,
-                      schriftColor: Colors.white,
-                      color: Palette.facebookColor,
+                    Builder(
+                      builder: (context) =>
+                       ButtonMitIcons(
+                        onTap: (){
+                          final snackBar = SnackBar(
+                            backgroundColor: Palette.facebookColor,
+                            duration: Duration(seconds: 3),
+                            content: Text('Facebook login hahaha',
+                              style: GoogleFonts.oswald(
+                                color: Colors.white,
+                                fontSize: 30.0
+                              ),),
+
+                          );
+                          Scaffold.of(context).showSnackBar(snackBar);
+                        },
+                          icon: Icon(
+                            MdiIcons.facebook,
+                            color: Colors.white,
+                          ),
+                          label: 'Log in with Facebook',
+                        height: 60.0,
+                        width: 400.0,
+                        schriftColor: Colors.white,
+                        color: Palette.facebookColor,
+                      ),
                     )
                   ],
                 ),
