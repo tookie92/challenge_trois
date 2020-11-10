@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nike_idee/screens/screens.dart';
 import 'package:nike_idee/widgets/widgets.dart';
 
 class FirstScreen extends StatefulWidget {
@@ -51,7 +52,7 @@ class _FirstScreenState extends State<FirstScreen> {
                Padding(
                  padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
                  child: ButtonOhneIcons(
-                   onTap: (){},
+                   onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (_)=> GridScreen())),
                    label: 'Get Started',
                    schriftColor: Colors.black,
                    color: Colors.white,
