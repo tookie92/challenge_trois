@@ -183,7 +183,7 @@ class __MaListeState extends State<_MaListe> {
                           child: Container(
                             child: Image(
                               image: AssetImage('assets/images/${shoeModel.imgPath}'),
-                              height: 300,
+                              height: 400,
                               width: 300,
                             ),
                           ),
