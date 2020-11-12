@@ -51,6 +51,7 @@ class _FeedScreenState extends State<FeedScreen> {
           ],
         ),
         body: ListView(
+          physics: NeverScrollableScrollPhysics(),
           children: [
             Padding(
               padding: EdgeInsets.fromLTRB(20.0, 20.0, 0.0, 20.0),
@@ -75,80 +76,137 @@ class _FeedScreenState extends State<FeedScreen> {
 
 
 class _MaListe extends StatefulWidget {
+
+
   @override
   __MaListeState createState() => __MaListeState();
 }
 
 class __MaListeState extends State<_MaListe> {
-  bool isCome = false;
+  PageController pageController;
+  int currentPage = 0;
 
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    Future.delayed(Duration(milliseconds: 2000),(){
-      setState(() {
-        isCome = true;
-      });
-    });
+    pageController = PageController(
+        viewportFraction: 1.0,
+      initialPage: currentPage,
+      keepPage: false
+    );
+  }
 
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    pageController.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    final controller = PageController(
-      initialPage: 1,
-    );
+
+
     return PageView.builder(
-      controller: controller,
+      controller: pageController,
+      pageSnapping: true,
+      onPageChanged: _onPageChanged,
+      physics: BouncingScrollPhysics(),
       scrollDirection: Axis.horizontal,
       itemCount: currentUser.shoes.length,
       itemBuilder: ((BuildContext context, int index){
+
         ShoeModel shoeModel = currentUser.shoes[index];
-        return Padding(
-          padding: EdgeInsets.all(10.0),
-          child: Stack(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.grey[300],
-                    borderRadius: BorderRadius.circular(30.0),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 5,
-                          blurRadius: 7,
-                          offset: Offset(0, 3)
-                      )
-                    ]
-                  ),
-                  height: 600,
-                  width: size.width * 0.9,
-                ),
-              ),
-              Positioned(
-                left: size.width * 0.0,
-                child: Transform.rotate(
-                  angle: pi /-4.9 ,
-                  child: Container(
-                    child: Image(
-                        image: AssetImage('assets/images/${shoeModel.imgPath}'),
-                      height: 300,
-                      width: 300,
+
+        return AnimatedBuilder(
+          animation: pageController,
+          builder: (context, child){
+            double value = 1;
+
+            if(pageController.position.haveDimensions){
+              value= pageController.page - index;
+              value= (1 - (value.abs())).clamp(0.0, 1.0);
+            }
+            return Align(
+              alignment: Alignment.topCenter,
+              child: Stack(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: Colors.grey[300],
+                          borderRadius: BorderRadius.circular(30.0),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.grey.withOpacity(0.5),
+                                spreadRadius: 5,
+                                blurRadius: 7,
+                                offset: Offset(0, 3)
+                            )
+                          ]
+                      ),
+                      height: 600,
+                      width: size.width * 0.9,
                     ),
                   ),
-                ),
-              )
-            ],
-          ),
+                  Positioned(
+                    top: 10.0,
+                    left: size.width * 0.2,
+                    child: Transform.scale(
+                      scale: value,
+                      child: Opacity(
+                       opacity: value,
+                        child: Container(
+                          height: 300,
+                          width:250,
+                          decoration: BoxDecoration(
+                            color:  shoeModel.color,
+                            shape: BoxShape.circle
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: size.width * 0.0,
+                    child: Transform.translate(
+                      offset: Offset(0,100 +(-value * 100)),
+                      child: Opacity(
+                        opacity: value,
+                        child: Transform.rotate(
+                          angle: pi/-4.9,
+                          child: Container(
+                            child: Image(
+                              image: AssetImage('assets/images/${shoeModel.imgPath}'),
+                              height: 300,
+                              width: 300,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            );
+          },
+
         );
 
       }),
     );
   }
+  
+  _onPageChanged(int index){
+    setState(() {
+      currentPage = index;
+    });
+  }
+
 }
 
