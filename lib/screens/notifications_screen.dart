@@ -25,7 +25,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                CircleIcon(icon: MdiIcons.inbox,add_other: true,),
+                CircleIcon(icon: MdiIcons.inbox,addOther: true,),
                 SizedBox(height: 30,),
                 Text(
                   'Don\'t miss out',

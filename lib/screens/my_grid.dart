@@ -111,7 +111,7 @@ class _GridScreenState extends State<GridScreen> {
                     ],
                   ),
 
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.12,),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.05,),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
                     child: ButtonOhneIcons(

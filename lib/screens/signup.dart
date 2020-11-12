@@ -15,7 +15,7 @@ class SignUp extends StatefulWidget {
 class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+
     return Scaffold(
       backgroundColor: Colors.grey[200],
       body: ListView(

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:nike_idee/screens/screens.dart';
-import 'package:nike_idee/widgets/widgets.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:nike_idee/widgets/widgets.dart';
+import 'package:nike_idee/screens/screens.dart';
 
 
 class LocationScreen extends StatefulWidget {
@@ -39,7 +39,7 @@ class _LocationScreenState extends State<LocationScreen> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: Text(
-                    'Be the first to know about our events',
+                    'In order to personnalize your app experience, we want to get to know you better..',
                     style: GoogleFonts.montserrat(
                         color: Colors.grey[200],
                         fontSize: 15.0,
@@ -54,14 +54,15 @@ class _LocationScreenState extends State<LocationScreen> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
                   child: ButtonOhneIcons(
-                    onTap: ()=> null ,
-                    label: 'Next',
+                    onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (_)=> LoadingScreen())),
+                    label: 'Get Started',
                     schriftColor: Colors.black,
                     color: Colors.white,
                     height: 60.0,
                     width: 300.0,
                   ),
                 )
+
               ],
             ),
 
