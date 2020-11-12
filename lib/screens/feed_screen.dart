@@ -29,28 +29,43 @@ class _FeedScreenState extends State<FeedScreen> {
     return WillPopScope(
       onWillPop:() => Future.value(false),
       child: Scaffold(
-        body: Stack(
-          children: [
-            Container(
-            decoration: BoxDecoration(
-              color: Color(0xffF6F6F6)
-             ),
-            ),
+        appBar: AppBar(
+          elevation: 2.0,
+          automaticallyImplyLeading: false,
+          backgroundColor: Colors.grey[200],
+          title: MyText(
+            label: 'Challenge',
+            color: Colors.black,
+            sizeText: 20.0,
+            fontWeight: FontWeight.w900,
+          ),
+          centerTitle: false,
+          actions: [
+            IconButton(
+              icon: Icon(MdiIcons.accountCircleOutline),
+              color: Colors.black,
+              onPressed: (){
 
-            Positioned(
-              top: size.width *0.4,
-              child: Container(
-                child: ListView(
-                  physics: NeverScrollableScrollPhysics(),
-                  children: [
-                   SizedBox(
-                     height: size.height,
-                       child: _MaListe()
-                   ),
-                  ],
-                ),
+              },
+            )
+          ],
+        ),
+        body: ListView(
+          physics: NeverScrollableScrollPhysics(),
+          children: [
+            Padding(
+              padding: EdgeInsets.fromLTRB(20.0, 20.0, 0.0, 20.0),
+              child: MyText(
+                label: 'Welcome ${currentUser.nom}',
+                sizeText: 18.0,
+                fontWeight: FontWeight.normal,
+                letterspacing: -1.2,
               ),
             ),
+           SizedBox(
+             height: size.height,
+               child: _MaListe()
+           ),
           ],
         )
       ),
@@ -100,16 +115,18 @@ class __MaListeState extends State<_MaListe> {
       controller: pageController,
       pageSnapping: true,
       onPageChanged: _onPageChanged,
-      physics: ClampingScrollPhysics(),
+      physics: BouncingScrollPhysics(),
       scrollDirection: Axis.horizontal,
       itemCount: currentUser.shoes.length,
       itemBuilder: ((BuildContext context, int index){
+
         ShoeModel shoeModel = currentUser.shoes[index];
 
         return AnimatedBuilder(
           animation: pageController,
           builder: (context, child){
             double value = 1;
+
             if(pageController.position.haveDimensions){
               value= pageController.page - index;
               value= (1 - (value.abs())).clamp(0.0, 1.0);
@@ -122,7 +139,7 @@ class __MaListeState extends State<_MaListe> {
                     padding: const EdgeInsets.all(10.0),
                     child: Container(
                       decoration: BoxDecoration(
-                          color: Colors.grey[100],
+                          color: Colors.grey[300],
                           borderRadius: BorderRadius.circular(30.0),
                           boxShadow: [
                             BoxShadow(
@@ -171,39 +188,6 @@ class __MaListeState extends State<_MaListe> {
                             ),
                           ),
                         ),
-                      ),
-                    ),
-                  ),
-                  AnimatedPositioned(
-                    duration: Duration(microseconds: 100),
-                    bottom:size.height * 0.3,
-                    left:value == value ? size.width * 0.1 : size.width * 0.09,
-                    curve:Curves.linear,
-                    child: AnimatedOpacity(
-                      duration:Duration(milliseconds: 3000),
-                      opacity: value,
-                      child: MyText(
-                        label: '${shoeModel.nom}',
-                        sizeText: 30.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-
-                  AnimatedPositioned(
-                    duration: Duration(microseconds: 100),
-                    bottom:size.height * 0.25,
-                    left: value == value ? size.width * 0.1 : size.width * 0.09,
-                    curve:Curves.easeInOut,
-                    child: AnimatedOpacity(
-                      duration:Duration(milliseconds: 3000),
-                      opacity: value,
-                      child: MyText(
-                        label: '${shoeModel.prix.toStringAsFixed(0)}\$',
-                        sizeText: 30.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
                       ),
                     ),
                   )
