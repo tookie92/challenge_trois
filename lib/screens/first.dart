@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nike_idee/screens/screens.dart';
+import 'package:nike_idee/settings/settings.dart';
 import 'package:nike_idee/widgets/widgets.dart';
 
 class FirstScreen extends StatefulWidget {
@@ -14,7 +15,7 @@ class _FirstScreenState extends State<FirstScreen> {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          color: Colors.black
+          color: Palette.blackColor,
         ),
         child: ListView(
           physics: NeverScrollableScrollPhysics(),

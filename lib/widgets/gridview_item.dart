@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nike_idee/settings/settings.dart';
 
 class GridViewItem extends StatelessWidget {
   final double _shoeSize;
@@ -13,11 +14,11 @@ class GridViewItem extends StatelessWidget {
       child: Text(
         _shoeSize.toStringAsFixed(0),
         style: TextStyle(
-          color: _isSelected? Colors.black: Colors.white
+          color: _isSelected? Palette.blackColor: Colors.white
         ),
       ),
       shape: CircleBorder(),
-      fillColor: _isSelected? Colors.white: Colors.black,
+      fillColor: _isSelected? Colors.white: Palette.blackColor,
       onPressed: null,
     );
   }

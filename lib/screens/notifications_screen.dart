@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:nike_idee/settings/settings.dart';
 import 'package:nike_idee/widgets/widgets.dart';
 import 'package:nike_idee/screens/screens.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,7 +16,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-            color: Colors.black
+            color: Palette.blackColor
         ),
         child: ListView(
           physics: NeverScrollableScrollPhysics(),

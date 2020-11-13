@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nike_idee/screens/screens.dart';
+import 'package:nike_idee/settings/palette.dart';
 import 'package:nike_idee/widgets/widgets.dart';
 
 class GridScreen extends StatefulWidget {
@@ -32,7 +33,7 @@ class _GridScreenState extends State<GridScreen> {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-            color: Colors.black
+            color: Palette.blackColor
         ),
         child: ListView(
           physics: NeverScrollableScrollPhysics(),
@@ -61,11 +62,14 @@ class _GridScreenState extends State<GridScreen> {
                           ),
                         ),
                       ),
-                      Text(
-                        'Skip >',
-                        style: GoogleFonts.montserrat(
-                            color: Colors.white,
-                            fontSize: 13.0
+                      GestureDetector(
+                        onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (_)=> NotificationScreen() )),
+                        child: Text(
+                          'Skip >',
+                          style: GoogleFonts.montserrat(
+                              color: Colors.white,
+                              fontSize: 13.0
+                          ),
                         ),
                       ),
                     ],
@@ -111,7 +115,7 @@ class _GridScreenState extends State<GridScreen> {
                     ],
                   ),
 
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.05,),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.07,),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
                     child: ButtonOhneIcons(

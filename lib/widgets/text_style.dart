@@ -8,6 +8,7 @@ class MyText extends StatelessWidget {
   final Color color;
   final TextOverflow overflow;
   final double letterspacing;
+  final double height;
 
   const MyText({Key key,
     @required this.label,
@@ -15,7 +16,8 @@ class MyText extends StatelessWidget {
     this.fontWeight,
     this.color,
     this.overflow,
-    this.letterspacing
+    this.letterspacing,
+    this.height
   }) : super(key: key);
 
 
@@ -28,6 +30,7 @@ class MyText extends StatelessWidget {
       fontWeight: fontWeight,
       color: color,
       letterSpacing: letterspacing,
+      height: height,
   ),
       overflow: overflow,
     );
