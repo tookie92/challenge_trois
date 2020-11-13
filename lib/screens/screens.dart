@@ -7,4 +7,5 @@ export 'first.dart';
 export 'my_grid.dart';
 export 'notifications_screen.dart';
 export 'feed_screen.dart';
+export 'details_screen.dart';
 

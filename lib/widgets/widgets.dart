@@ -4,3 +4,4 @@ export 'button_mit_icons.dart';
 export 'circle_icons.dart';
 export 'gridview_item.dart';
 export 'text_style.dart';
+export 'search_home.dart';
