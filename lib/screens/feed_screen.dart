@@ -56,18 +56,105 @@ class _FeedScreenState extends State<FeedScreen> {
           physics: NeverScrollableScrollPhysics(),
           children: [
 
-            SizedBox(height: 250.0,),
+            SizedBox(height: 20.0,),
             ListView(
               shrinkWrap: true,
               scrollDirection: Axis.vertical,
               physics: NeverScrollableScrollPhysics(),
               children: [
                 SizedBox(
-                    height: size.height,
+                    height: 450,
                     child: _MaListe()
                 ),
+
+
               ],
             ),
+            SizedBox(height: 20.0,),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Container(
+                height: 200.0,
+                width: 200.0,
+                decoration: BoxDecoration(
+                    color: Palette.boxColor,
+                  borderRadius: BorderRadius.circular(30.0)
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+                  child: Row(
+                    //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Column(
+                        children: [
+                          CircleAvatar(
+                            radius: 40.0,
+                            backgroundImage: NetworkImage('${currentUser.imgPath}'),
+                          ),
+                        ],
+                      ),
+                      SizedBox(width: 20.0,),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(height: 10.0,),
+                          MyText(
+                              label: '${currentUser.nom}',
+                              sizeText: 20.0,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                            height: 1.0,
+                          ),
+                          SizedBox(height: 9.0,),
+                          Container(
+                            width: 200.0,
+                            child: MyText(
+                              label: '${currentUser.adresse}',
+                              sizeText: 15.0,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w600,
+                              height: 2.0,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                          SizedBox(height: 10.0,),
+                          MyText(
+                            label: 'Status: ${currentUser.status}',
+                            sizeText: 15.0,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                            height: 2.0,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                          SizedBox(height: 3.0,),
+                          Row(
+                            children: [
+                             TextButton(
+                               onPressed: (){
+
+                               },
+                               child: MyText(
+                                 label: 'Visit the  Blog',
+                                 color: Colors.white,
+                               ),
+                               style: TextButton.styleFrom(
+                                 elevation: 1.0,
+                                 onSurface: Colors.white,
+                                 primary: Colors.white,
+                                 backgroundColor: Colors.deepOrangeAccent,
+                               ),
+                             )
+                            ],
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            )
+
           ],
         )
       ),
@@ -173,14 +260,17 @@ class __MaListeState extends State<_MaListe> {
                         opacity: value,
                         child: Transform.rotate(
                           angle: pi/-4.9,
-                          child: Container(
-                            height: 400,
-                            width: size.width * 0.9,
-                            child: Image(
-                              image: AssetImage('assets/images/${shoeModel.imgPath}'),
-                              height: 300,
-                              width: 300,
-                              fit: BoxFit.fitHeight,
+                          child: Hero(
+                            tag: 'hero${shoeModel.imgPath}',
+                            child: Container(
+                              height: 400,
+                              width: size.width * 0.9,
+                              child: Image(
+                                image: AssetImage('assets/images/${shoeModel.imgPath}'),
+                                height: 300,
+                                width: 300,
+                                fit: BoxFit.fitHeight,
+                              ),
                             ),
                           ),
                         ),

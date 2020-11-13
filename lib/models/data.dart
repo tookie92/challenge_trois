@@ -3,8 +3,10 @@ import 'package:nike_idee/models/models.dart';
 
 final currentUser = UserModel(
   id: 1,
- nom: 'Joseph Ikinda',
-  adresse: 'Koblenz, Germany',
+ nom: 'Joseph Ilanga',
+  adresse: 'Kowelenz 400, Germany, 90400 ',
+    status: 'Best Client',
+    imgPath: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
     shoes: [
       ShoeModel(
         nom: "Air one",

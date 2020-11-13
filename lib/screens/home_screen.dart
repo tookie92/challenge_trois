@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:nike_idee/settings/settings.dart';
+import 'package:nike_idee/widgets/button_mit_icons.dart';
 import 'screens.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -113,56 +115,14 @@ class _HomeScreenState extends State<HomeScreen> {
             child: AnimatedOpacity(
               duration: Duration(milliseconds: 500),
               opacity: _isText? 1.0 : 0.0,
-              child: Container(
-                constraints: BoxConstraints(maxWidth: 300.0),
-                height: 65.0,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(5.0)
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                      child: GestureDetector(
-                        onTap: ()=> Navigator.of(context).push(MaterialPageRoute(builder: (_)=> SignUp())),
-                        child: Container(
-                          child: Text('Join now'.toUpperCase(),
-                            style: GoogleFonts.oswald(
-                              fontSize: 15.0,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    VerticalDivider(
-                      thickness: 1,
-                      width: 1.0,
-                    ),
-                    SizedBox(width: 0.0,),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 1.0),
-                      child: GestureDetector(
-                        onTap: ()=> Navigator.of(context).push(MaterialPageRoute(builder: (_)=> SignUp())),
-                        child: Container(
-                          child: Text('Login'.toUpperCase(),
-                            style: GoogleFonts.oswald(
-                                fontSize: 15.0,
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 0.0,),
-
-                  ],
-                ),
-              ),
+              child: ButtonMitIcons(
+                onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (_)=> FirstScreen())),
+                label: 'Login',
+                height: 60.0,
+                width: 300.0,
+                color: Colors.white,
+                icon: Icon(MdiIcons.accountBox),
+              )
             )
           )
         ],
