@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nike_idee/screens/screens.dart';
+import 'package:nike_idee/settings/palette.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primaryColor: Colors.white,
-        scaffoldBackgroundColor: Colors.grey[200]
+        scaffoldBackgroundColor: Palette.blackColor
       ),
       debugShowCheckedModeBanner: false,
       home: HomeScreen(),

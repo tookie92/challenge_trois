@@ -18,7 +18,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
     super.initState();
     Future.delayed(Duration(milliseconds:5000 ),(){
       setState(() {
-        Navigator.push(context, MaterialPageRoute(builder: (_) => FeedScreen()));
+        Navigator.push(context, MaterialPageRoute(builder: (_) => NavScreen()));
       });
     });
     Future.delayed(Duration(milliseconds:2000 ),(){

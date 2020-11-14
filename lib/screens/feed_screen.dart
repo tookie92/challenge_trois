@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:nike_idee/models/data.dart';
 import 'package:nike_idee/models/models.dart';
 import 'package:nike_idee/screens/screens.dart';
@@ -25,28 +24,6 @@ class _FeedScreenState extends State<FeedScreen> {
     return WillPopScope(
       onWillPop:() => Future.value(false),
       child: Scaffold(
-        appBar: AppBar(
-          centerTitle: false,
-          automaticallyImplyLeading: false,
-          elevation: 0.0,
-          backgroundColor: Palette.blackColor,
-          title: MyText(
-            label: 'Challenge',
-            color: Colors.white,
-            sizeText: 20.0,
-            fontWeight: FontWeight.bold,
-          ),
-          actions: [
-            IconButton(
-              icon: Icon(MdiIcons.accountCircle, color: Colors.white,),
-              splashColor: Palette.boxColor,
-              splashRadius: 20.2,
-              onPressed: (){
-
-              },
-            )
-          ],
-        ),
         backgroundColor: Palette.blackColor ,
         body: ListView(
           physics: NeverScrollableScrollPhysics(),
@@ -54,7 +31,7 @@ class _FeedScreenState extends State<FeedScreen> {
            SearchHome(
              hintext: 'search',
            ),
-            SizedBox(height: 20.0,),
+            SizedBox(height: 5.0,),
             ListView(
               shrinkWrap: true,
               scrollDirection: Axis.vertical,
