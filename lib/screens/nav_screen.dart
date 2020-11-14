@@ -50,6 +50,14 @@ void _onItemTapped(int index){
                 onPressed: (){
 
                 },
+              ),
+              IconButton(
+                icon: Icon(MdiIcons.shopping, color: Colors.white,),
+                splashColor: Palette.boxColor,
+                splashRadius: 20.2,
+                onPressed: (){
+
+                },
               )
             ],
           ),

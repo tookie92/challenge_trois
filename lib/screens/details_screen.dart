@@ -56,10 +56,32 @@ class _DetailScreenState extends State<DetailScreen> {
                         height: 400.0,
                         width: 150.0,
                         decoration: BoxDecoration(
-                          color: Palette.boxColor,
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/background.jpg'),
+                            fit: BoxFit.cover
+                          ),
+                          //color: Palette.boxColor,
                           borderRadius: BorderRadius.only(
                               topRight: Radius.circular(30.0),
                               bottomRight: Radius.circular(30.0),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      child: Container(
+                        height: 400.0,
+                        width: 150.0,
+                        decoration: BoxDecoration(
+                         gradient: LinearGradient(
+                           colors: [
+                             Palette.boxColor.withOpacity(0.3),
+                             Palette.blackColor.withOpacity(0.6),
+                           ],
+                         ),
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(30.0),
+                            bottomRight: Radius.circular(30.0),
                           ),
                         ),
                       ),
