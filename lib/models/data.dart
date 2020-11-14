@@ -12,7 +12,7 @@ final currentUser = UserModel(
         nom: "Air one",
         prix: 200.0,
         description:
-        'Lorem ipsum dolor',
+        'Lorem ipsum dolor sit amet consectetur adipiscing, elit rutrum velit ligula malesuada himenaeos, eleifend convallis pulvinar dictum hendrerit.',
         imgPath: 'un.png',
         color: Colors.deepOrangeAccent,
 
@@ -21,7 +21,7 @@ final currentUser = UserModel(
         nom: "Air second",
         prix: 200.0,
         description:
-        'Lorem ipsum dolor sit amet consectetur',
+        'Lorem ipsum dolor sit amet consectetur adipiscing, elit rutrum velit ligula malesuada himenaeos, eleifend convallis pulvinar dictum hendrerit.',
         imgPath: 'deux.png',
         color: Colors.deepPurple,
 
@@ -30,7 +30,7 @@ final currentUser = UserModel(
         nom: "Papa Ikos",
         prix: 200.0,
         description:
-        'Lorem ipsum dolor ',
+        'Lorem ipsum dolor sit amet consectetur adipiscing, elit rutrum velit ligula malesuada himenaeos, eleifend convallis pulvinar dictum hendrerit.',
         imgPath: 'trois.png',
         color: Colors.redAccent,
 
@@ -39,7 +39,7 @@ final currentUser = UserModel(
         nom: "Air third",
         prix: 200.0,
         description:
-        'Lorem ipsum dolor',
+        'Lorem ipsum dolor sit amet consectetur adipiscing, elit rutrum velit ligula malesuada himenaeos, eleifend convallis pulvinar dictum hendrerit.',
         imgPath: 'quatre.png',
         color: Colors.pink,
 
@@ -48,7 +48,7 @@ final currentUser = UserModel(
         nom: "Air fourth",
         prix: 200.0,
         description:
-        'Lorem ipsum dolor',
+        'Lorem ipsum dolor sit amet consectetur adipiscing, elit rutrum velit ligula malesuada himenaeos, eleifend convallis pulvinar dictum hendrerit.',
         imgPath: 'cinq.png',
         color: Colors.blueAccent,
       ),
@@ -56,7 +56,7 @@ final currentUser = UserModel(
         nom: "Air sixth",
         prix: 200.0,
         description:
-        'Lorem ipsum dolor',
+        'Lorem ipsum dolor sit amet consectetur adipiscing, elit rutrum velit ligula malesuada himenaeos, eleifend convallis pulvinar dictum hendrerit.',
         imgPath: 'six.png',
         color: Colors.red,
       ),

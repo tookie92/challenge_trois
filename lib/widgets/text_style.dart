@@ -9,6 +9,8 @@ class MyText extends StatelessWidget {
   final TextOverflow overflow;
   final double letterspacing;
   final double height;
+  final int maxLines;
+  final TextAlign textAlign;
 
   const MyText({Key key,
     @required this.label,
@@ -17,7 +19,9 @@ class MyText extends StatelessWidget {
     this.color,
     this.overflow,
     this.letterspacing,
-    this.height
+    this.height,
+    this.maxLines,
+    this.textAlign
   }) : super(key: key);
 
 
@@ -33,6 +37,8 @@ class MyText extends StatelessWidget {
       height: height,
   ),
       overflow: overflow,
+      maxLines: maxLines,
+      textAlign: textAlign,
     );
   }
 }

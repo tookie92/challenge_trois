@@ -21,37 +21,34 @@ class _FeedScreenState extends State<FeedScreen> {
   Widget build(BuildContext context) {
 
     //final size = MediaQuery.of(context).size;
-    return WillPopScope(
-      onWillPop:() => Future.value(false),
-      child: Scaffold(
-        backgroundColor: Palette.blackColor ,
-        body: ListView(
-          physics: NeverScrollableScrollPhysics(),
-          children: [
-           SearchHome(
-             hintext: 'search',
-           ),
-            SizedBox(height: 5.0,),
-            ListView(
-              shrinkWrap: true,
-              scrollDirection: Axis.vertical,
-              physics: NeverScrollableScrollPhysics(),
-              children: [
-                SizedBox(
-                    height: 550,
-                    child: _MaListe()
-                ),
+    return Scaffold(
+      backgroundColor: Palette.blackColor ,
+      body: ListView(
+        physics: NeverScrollableScrollPhysics(),
+        children: [
+         SearchHome(
+           hintext: 'search',
+         ),
+          SizedBox(height: 5.0,),
+          ListView(
+            shrinkWrap: true,
+            scrollDirection: Axis.vertical,
+            physics: NeverScrollableScrollPhysics(),
+            children: [
+              SizedBox(
+                  height: 550,
+                  child: _MaListe()
+              ),
 
 
-              ],
-            ),
-            SizedBox(height: 20.0,),
+            ],
+          ),
+          SizedBox(height: 20.0,),
 
 
-          ],
-        ),
-
+        ],
       ),
+
     );
   }
 }
