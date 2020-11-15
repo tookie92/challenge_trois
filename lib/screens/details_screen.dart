@@ -30,15 +30,9 @@ class _DetailScreenState extends State<DetailScreen> {
           color: Colors.white,
         ),
         backgroundColor: Palette.blackColor,
-        leading:IconButton(
-          icon: Icon(Icons.arrow_back_ios),
-          color: Colors.white,
-          onPressed: (){
-            Navigator.pop(context);
-          },
-        )
+
       ),
-      body: ListView(
+      body: Column(
         children: [
             Column(
               children: [
