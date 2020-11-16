@@ -26,74 +26,74 @@ void _onItemTapped(int index){
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop:() => Future.value(false),
-      child: DefaultTabController(
-        length: _screens.length,
-        child: Scaffold(
-          appBar: AppBar(
-            centerTitle: false,
-            automaticallyImplyLeading: false,
-            elevation: 0.0,
-            backgroundColor: Palette.blackColor,
-            title: MyText(
-              label: 'Challenge',
-              color: Colors.white,
-              sizeText: 20.0,
-              fontWeight: FontWeight.bold,
-            ),
-            actions: [
-              IconButton(
-                icon: Icon(MdiIcons.accountCircle, color: Colors.white,),
-                splashColor: Palette.boxColor,
-                splashRadius: 20.2,
-                onPressed: (){
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: false,
+        automaticallyImplyLeading: false,
+        elevation: 0.0,
+        backgroundColor: Palette.blackColor,
+        title: MyText(
+          label: 'Challenge',
+          color: Colors.white,
+          sizeText: 20.0,
+          fontWeight: FontWeight.bold,
+        ),
+        actions: [
+          IconButton(
+            icon: Icon(MdiIcons.accountCircle, color: Colors.white,),
+            splashColor: Palette.boxColor,
+            splashRadius: 20.2,
+            onPressed: (){
 
-                },
-              ),
-              IconButton(
-                icon: Icon(MdiIcons.shopping, color: Colors.white,),
-                splashColor: Palette.boxColor,
-                splashRadius: 20.2,
-                onPressed: (){
-
-                },
-              )
-            ],
+            },
           ),
-          body: IndexedStack(
+          IconButton(
+            icon: Icon(MdiIcons.shopping, color: Colors.white,),
+            splashColor: Palette.boxColor,
+            splashRadius: 20.2,
+            onPressed: (){
+
+            },
+          )
+        ],
+      ),
+      body: WillPopScope(
+        onWillPop: ()=> Future.value(false),
+        child: DefaultTabController(
+          length: _screens.length,
+          child: IndexedStack(
             children: [
           _screens.elementAt(_selectedIndex),
             ],
 
           ),
-          bottomNavigationBar: BottomNavigationBar(
-            items: [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home,),
-                label: 'Home',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.business,),
-                label: 'Business',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.movie_creation_outlined,),
-                label: 'Stories',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.school,),
-                label: 'School',
-              ),
-            ],
-            currentIndex: _selectedIndex,
-            unselectedItemColor: Palette.boxColor,
-            selectedItemColor: Colors.amber[800],
-            backgroundColor: Palette.blackColor,
-            type: BottomNavigationBarType.fixed,
-            onTap: _onItemTapped,
-          ),
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home,),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.business,),
+            label: 'Business',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.movie_creation_outlined,),
+            label: 'Stories',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.school,),
+            label: 'School',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        unselectedItemColor: Palette.boxColor,
+        selectedItemColor: Colors.amber[800],
+        backgroundColor: Palette.blackColor,
+        type: BottomNavigationBarType.fixed,
+        onTap: _onItemTapped,
       ),
     );
 

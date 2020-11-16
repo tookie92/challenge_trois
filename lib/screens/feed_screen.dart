@@ -20,7 +20,7 @@ class _FeedScreenState extends State<FeedScreen> {
   @override
   Widget build(BuildContext context) {
 
-    //final size = MediaQuery.of(context).size;
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Palette.blackColor ,
       body: ListView(
@@ -36,7 +36,7 @@ class _FeedScreenState extends State<FeedScreen> {
             physics: NeverScrollableScrollPhysics(),
             children: [
               SizedBox(
-                  height: 550,
+                  height: size.height * 0.6,
                   child: _MaListe()
               ),
 
@@ -114,7 +114,7 @@ class __MaListeState extends State<_MaListe> {
             return Align(
               alignment: Alignment.topCenter,
               child: GestureDetector(
-                onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (_)=> DetailScreen(shoeModel))),
+                onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (_)=>   DetailScreen(shoeModel))),
                 child: Stack(
                   children: [
                     Padding(
@@ -124,7 +124,7 @@ class __MaListeState extends State<_MaListe> {
                             color: Palette.boxColor,
                             borderRadius: BorderRadius.circular(30.0),
                         ),
-                        height: 550,
+                        height: size.height * 0.6,
                         width: size.width * 0.9,
                       ),
                     ),
@@ -172,8 +172,8 @@ class __MaListeState extends State<_MaListe> {
                     ),
 
                     Positioned(
-                      left: size.width* 0.06,
-                      top: 460.0,
+                      left: size.width* 0.10,
+                      top: size.height * 0.50,
                       child: Container(
                         height: 400,
                         width: size.width * 0.9,
@@ -190,7 +190,7 @@ class __MaListeState extends State<_MaListe> {
 
                     Positioned(
                       right: size.width* 0.022,
-                      top: 468.0,
+                      top: size.height * 0.50,
                       child: Container(
                         height: 70,
                         width: size.width * 0.4,
@@ -205,7 +205,7 @@ class __MaListeState extends State<_MaListe> {
                     ),
                     Positioned(
                       left: size.width* 0.64,
-                      top: 480,
+                      top: size.height * 0.52,
                       child: Container(
                         height: 400,
                         width: size.width * 0.9,
