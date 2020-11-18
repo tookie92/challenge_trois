@@ -63,3 +63,37 @@ final currentUser = UserModel(
     ]
 
 );
+
+
+
+final lastOrder = OrderModel(
+  quantity: 3,
+  shoes: [
+        ShoeModel(
+          nom: "Air third",
+          prix: 200.0,
+          description:
+          'Lorem ipsum dolor sit amet consectetur adipiscing, elit rutrum velit ligula malesuada himenaeos, eleifend convallis pulvinar dictum hendrerit.',
+          imgPath: 'quatre.png',
+          color: Colors.pink,
+
+        ),
+        ShoeModel(
+          nom: "Air fourth",
+          prix: 200.0,
+          description:
+          'Lorem ipsum dolor sit amet consectetur adipiscing, elit rutrum velit ligula malesuada himenaeos, eleifend convallis pulvinar dictum hendrerit.',
+          imgPath: 'cinq.png',
+          color: Colors.blueAccent,
+        ),
+        ShoeModel(
+          nom: "Air sixth",
+          prix: 200.0,
+          description:
+          'Lorem ipsum dolor sit amet consectetur adipiscing, elit rutrum velit ligula malesuada himenaeos, eleifend convallis pulvinar dictum hendrerit.',
+          imgPath: 'six.png',
+          color: Colors.red,
+        ),
+
+  ]
+);

@@ -116,7 +116,7 @@ class _HomeScreenState extends State<HomeScreen> {
               duration: Duration(milliseconds: 500),
               opacity: _isText? 1.0 : 0.0,
               child: ButtonMitIcons(
-                onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (_)=> FirstScreen())),
+                onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (_)=> SignUp())),
                 label: 'Login',
                 height: 60.0,
                 width: 300.0,

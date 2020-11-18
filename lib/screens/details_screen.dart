@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:nike_idee/models/models.dart';
 import 'package:nike_idee/screens/screens.dart';
 import 'package:nike_idee/settings/palette.dart';
@@ -62,79 +61,10 @@ class _DetailScreenState extends State<DetailScreen> {
               SizedBox(height: 20.0,),
                 Column(
                   children: [
-                    Stack(
-                      children: [
-                        Container(
-                          height: size.width * 0.75,
-                          width: size.width * 1.0,
-                          decoration: BoxDecoration(
-                            color: Palette.boxColor.withOpacity(0.1)
-                          ),
-                        ),
-                        Positioned(
-                          child: Container(
-                            height: size.width * 0.7,
-                            width: size.width * 0.35,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage('assets/images/background.jpg'),
-                                fit: BoxFit.cover
-                              ),
-                              //color: Palette.boxColor,
-                              borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(30.0),
-                                  bottomRight: Radius.circular(30.0),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          child: Container(
-                            height: size.width * 0.7,
-                            width: size.width * 0.35,
-                            decoration: BoxDecoration(
-                             gradient: LinearGradient(
-                               colors: [
-                                 Palette.boxColor.withOpacity(0.3),
-                                 Palette.blackColor.withOpacity(0.6),
-                               ],
-                             ),
-                              borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(30.0),
-                                bottomRight: Radius.circular(30.0),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          right: size.width * 0.1,
-                          top: size.width * 0.0,
-                          bottom: size.width * 0.1,
-                          child: Container(
-                            height: size.width * 0.7,
-                            width: size.width * 0.75,
-                            child: Hero(
-                              tag: 'hero${widget.shoeModel.imgPath}',
-                              child: Align(
-                                alignment: Alignment.topCenter,
-                                child: Transform.scale(
-                                  scale: 1.1,
-                                  child: Transform.rotate(
-                                    angle: pi/-4.9,
-                                    child: Image(
-                                      image: AssetImage('assets/images/${widget.shoeModel.imgPath}'),
-                                      fit: BoxFit.cover,
-                                      height: 400.0,
-                                      width: 400.0,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
+                   ShoeHeader(
+                       route: 'hero${widget.shoeModel.imgPath}',
+                        nameroute: 'assets/images/${widget.shoeModel.imgPath}',
+                   ),
                     SizedBox(height: 10.0,),
                     Padding(
                       padding: const EdgeInsets.all(20.0),
@@ -176,7 +106,7 @@ class _DetailScreenState extends State<DetailScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
-                                width: size.width * 0.70,
+                                width: size.width * 0.50,
                                 child: MyText(
                                   color: Colors.white,
                                   label: 'Prix:',
@@ -189,7 +119,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                 ),
                               ),
                               Container(
-                                width: size.width * 0.2,
+                                width: size.width * 0.35,
                                 child: MyText(
                                   color: Colors.white,
                                   label: '${widget.shoeModel.prix.toStringAsFixed(0)}  \$',
@@ -252,7 +182,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 10.0,),
+                    SizedBox(height: 9.0,),
                     Row(
                       //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -279,32 +209,32 @@ class _DetailScreenState extends State<DetailScreen> {
                                   //mainAxisAlignment: MainAxisAlignment.spaceAround,
                                   children: [
                                     Container(
-                                      height: size.width * 0.07,
-                                      width: size.width * 0.07,
+                                      height: size.width * 0.05,
+                                      width: size.width * 0.05,
                                       decoration:BoxDecoration(
                                         color: Colors.blueAccent,
                                       ),
                                     ),
                                     SizedBox(width: 10.0,),
                                     Container(
-                                      height: size.width * 0.07,
-                                      width: size.width * 0.07,
+                                      height: size.width * 0.05,
+                                      width: size.width * 0.05,
                                       decoration:BoxDecoration(
                                         color: Colors.redAccent,
                                       ),
                                     ),
                                     SizedBox(width: 10.0,),
                                     Container(
-                                      height: size.width * 0.07,
-                                      width: size.width * 0.07,
+                                      height: size.width * 0.05,
+                                      width: size.width * 0.05,
                                       decoration:BoxDecoration(
                                         color: Colors.yellowAccent,
                                       ),
                                     ),
                                     SizedBox(width: 10.0,),
                                     Container(
-                                      height: size.width * 0.07,
-                                      width: size.width * 0.07,
+                                      height: size.width * 0.05,
+                                      width: size.width * 0.05,
                                       decoration:BoxDecoration(
                                         color: Colors.tealAccent,
                                       ),
@@ -373,7 +303,10 @@ class _DetailScreenState extends State<DetailScreen> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: ButtonOhneIcons(
-                          onTap: (){},
+                          onTap: (){
+                            Navigator.of(context).push(MaterialPageRoute(builder: (_)=> CheckoutScreen()));
+
+                          },
                           label: 'Checkout',
                         color: Colors.white,
                         height: 50.0,

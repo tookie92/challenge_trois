@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:nike_idee/screens/feed_screen.dart';
+import 'package:nike_idee/screens/screens.dart';
 import 'package:nike_idee/settings/palette.dart';
 import 'package:nike_idee/widgets/widgets.dart';
 
@@ -13,7 +14,6 @@ class _NavScreenState extends State<NavScreen> {
   int _selectedIndex = 0;
   final List<Widget> _screens = [
     FeedScreen(),
-    Scaffold(),
     Scaffold(),
     Scaffold(),
   ];
@@ -52,7 +52,7 @@ void _onItemTapped(int index){
             splashColor: Palette.boxColor,
             splashRadius: 20.2,
             onPressed: (){
-
+              Navigator.of(context).push(MaterialPageRoute(builder: (_)=> CheckoutScreen()));
             },
           )
         ],
@@ -75,10 +75,7 @@ void _onItemTapped(int index){
             icon: Icon(Icons.home,),
             label: 'Home',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.business,),
-            label: 'Business',
-          ),
+
           BottomNavigationBarItem(
             icon: Icon(Icons.movie_creation_outlined,),
             label: 'Stories',

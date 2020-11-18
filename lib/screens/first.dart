@@ -53,7 +53,7 @@ class _FirstScreenState extends State<FirstScreen> {
                Padding(
                  padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
                  child: ButtonOhneIcons(
-                   onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (_)=> GridScreen())),
+                   onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (_)=> LoadingScreen())),
                    label: 'Get Started',
                    schriftColor: Colors.black,
                    color: Colors.white,

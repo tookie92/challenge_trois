@@ -5,3 +5,4 @@ export 'circle_icons.dart';
 export 'gridview_item.dart';
 export 'text_style.dart';
 export 'search_home.dart';
+export 'shoe_header.dart';
