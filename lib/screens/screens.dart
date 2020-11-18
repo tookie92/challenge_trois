@@ -10,4 +10,5 @@ export 'feed_screen.dart';
 export 'details_screen.dart';
 export 'nav_screen.dart';
 export 'checkout_screen.dart';
+export 'story_screen.dart';
 

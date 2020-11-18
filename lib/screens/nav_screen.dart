@@ -14,7 +14,7 @@ class _NavScreenState extends State<NavScreen> {
   int _selectedIndex = 0;
   final List<Widget> _screens = [
     FeedScreen(),
-    Scaffold(),
+    Home(),
     Scaffold(),
   ];
 void _onItemTapped(int index){
